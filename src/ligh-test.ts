@@ -86,9 +86,11 @@ export default class TestCase {
     protected assertThrows(f: () => void): void {
         try {
             f();
-            console.error(`Test failure: expected ${f.toString()} to throw an error.`);
-            throw TestResult.failure;
-        } catch {}
+        } catch {
+            return;
+        }
+        console.error(`Test failure: expected ${f.toString()} to throw an error.`);
+        throw TestResult.failure;
     }
 }
 

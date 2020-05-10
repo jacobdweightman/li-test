@@ -8,6 +8,7 @@
         "noImplicitThis": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
+        "strictNullChecks": true,
         "experimentalDecorators": true,
         "outDir": "./lib",
         "declaration": true

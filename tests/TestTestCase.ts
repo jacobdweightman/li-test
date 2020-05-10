@@ -46,4 +46,10 @@ export default class TestTestCase extends TestCase {
     testAssertThrows() {
         this.assertThrows(() => { throw 0 });
     }
+
+    testAssertThrowsFailure() {
+        this.assertThrows(() => {
+            this.assertThrows(() => { return 0 });
+        });
+    }
 }
