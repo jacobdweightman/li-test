@@ -69,6 +69,23 @@ export default class TestCase {
         }
     }
 
+    protected assertIn<T>(item: T, collection: Iterable<T>) {
+        if(collection instanceof Set || collection instanceof Map) {
+            // Able to check these types in O(1) time.
+            if(collection.has(item)) return;
+        } else {
+            for(let collectionItem of collection) {
+                if(collectionItem === item) return;
+            }
+        }
+        console.error(`Test failure: ${item} isn't in collection [`);
+        for(let collectionItem of collection) {
+            console.error(`\t${collectionItem},`);
+        }
+        console.error("]");
+        throw TestResult.failure;
+    }
+
     protected assertIsNull(x: any): void {
         if(!(x === null)) {
             console.error(`Test failure: expected ${x} to be null`);

@@ -83,6 +83,30 @@ export default class TestTestCase extends TestCase {
         });
     }
 
+    testAssertInSet() {
+        let set = new Set([1, 2, 3]);
+        this.assertIn(2, set);
+    }
+
+    testAssertInSetFailure() {
+        let set = new Set([1, 2, 3]);
+        this.assertThrows(() => {
+            this.assertIn(4, set);
+        });
+    }
+
+    testAssertInArray() {
+        let arr = [1, 2, 3];
+        this.assertIn(2, arr);
+    }
+
+    testAssertInArrayFailure() {
+        let arr = [1, 2, 3];
+        this.assertThrows(() => {
+            this.assertIn(4, arr);
+        });
+    }
+
     testAssertIsNull() {
         this.assertIsNull(null);
     }

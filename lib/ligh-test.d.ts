@@ -16,6 +16,7 @@ export default class TestCase {
     protected assertLessOrEqual<T>(x: T, y: T): void;
     protected assertGreater<T>(x: T, y: T): void;
     protected assertGreaterOrEqual<T>(x: T, y: T): void;
+    protected assertIn<T>(item: T, collection: Iterable<T>): void;
     protected assertIsNull(x: any): void;
     protected assertNotNull(x: any): void;
     protected assertThrows(f: () => void): void;
