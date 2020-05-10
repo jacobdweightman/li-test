@@ -1,6 +1,6 @@
 {
   "name": "@jacobdweightman/ligh-test",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A lightweight testing framework for JavaScript and TypeScript, with no external dependencies.",
   "author": "Jacob Weightman",
   "license": "MIT",
